@@ -33,6 +33,7 @@ def dfmanager_init(name):
     f.write(DEFAULT_CONFIG + config)
     f.close()
 
+
 def dfmanager_add(add, argv):
     global REPO_PATH
     f = open(os.path.expanduser(REPO_PATH + ".dfmanager"), "r")
@@ -62,7 +63,7 @@ def dfmanager_update(argv):
             elif os.path.isfile(dst):
                 os.remove(dst)
         print("updating " + i)
-        copyfile(i, dst)
+        copyfile(os.path.expanduser(i), dst)
 
 
 def load_global_config():
@@ -80,6 +81,8 @@ def load_global_config():
         value = i.split("=")[1]
 
         if key == "path":
+            if not value[-1] == "/":
+                value += "/"
             REPO_PATH = value
 
 
