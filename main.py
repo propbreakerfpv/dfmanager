@@ -4,7 +4,7 @@ from os.path import isdir
 import sys
 import os
 import git
-import shutil, errno
+import shutil
 
 DEFAULT_CONFIG = ""
 GLOBAL_CONFIG_PATH = os.path.expanduser("~/.config/dfmanager/dfmanager")
