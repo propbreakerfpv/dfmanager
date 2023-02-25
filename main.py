@@ -89,6 +89,11 @@ def load_global_config():
 if __name__ == "__main__":
     load_global_config()
     if len(sys.argv) < 2:
+        print("Usage: dfmanager [opt] [flags]")
+        print("options:")
+        print("    init - initualize a df repo")
+        print("    add - add files to the watch list")
+        print("    update - update the files in the repo(use after modifying any dot files)")
         exit()
     if sys.argv[1] == "init":
         dfmanager_init(sys.argv[2])

@@ -19,5 +19,5 @@ fn dfm_init(args: Vec<String>) {
         .arg("echo hello")
         .output()
         .expect("failed to execute process");
-    println!("{}",output.stdout);
+    println!("{:?}",output.stdout);
 }
